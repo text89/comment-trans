@@ -1,331 +1,373 @@
-/* ========================================
-CommentTrans
-Common Stylesheet
-======================================== */
+/* ==========================================
+   CommentTrans - Common Stylesheet
+   ========================================== */
 
-/* Reset */
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+
+    --background-color: #f5f7fa;
+    --surface-color: #ffffff;
+
+    --text-color: #222222;
+    --text-muted: #666666;
+
+    --border-color: #e5e7eb;
+
+    --shadow:
+        0 2px 6px rgba(0, 0, 0, 0.05);
+
+    --container-width: 960px;
+}
+
+/* ==========================================
+   Reset
+   ========================================== */
 
 *,
 *::before,
 *::after {
-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
 
-```
-font-family:
-    "Hiragino Sans",
-    "Yu Gothic",
-    "Meiryo",
-    sans-serif;
+    font-family:
+        "Hiragino Sans",
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
 
-line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.8;
 
-color: #222;
-background-color: #f5f7fa;
-```
-
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
-/* Layout */
+/* ==========================================
+   Layout
+   ========================================== */
 
 .container {
-width: 100%;
-max-width: 960px;
-margin: 0 auto;
-padding: 0 20px;
+    width: 100%;
+    max-width: var(--container-width);
+
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Header */
+/* ==========================================
+   Header
+   ========================================== */
 
 .hero {
-background: linear-gradient(135deg, #2563eb, #1d4ed8);
-color: #ffffff;
-text-align: center;
-padding: 72px 20px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-color),
+            var(--primary-dark)
+        );
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 80px 20px;
 }
 
 .hero h1 {
-margin: 0;
-font-size: 3rem;
-font-weight: 700;
+    margin: 0;
+
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
 }
 
 .subtitle {
-margin-top: 12px;
-font-size: 1.2rem;
-opacity: 0.95;
+    margin-top: 12px;
+
+    font-size: 1.2rem;
+    opacity: 0.95;
 }
 
-/* Navigation */
+/* ==========================================
+   Navigation
+   ========================================== */
 
 nav {
-background: #ffffff;
-border-bottom: 1px solid #e5e7eb;
-position: sticky;
-top: 0;
-z-index: 100;
+    background-color: var(--surface-color);
+
+    border-bottom: 1px solid var(--border-color);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav .container {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 32px;
-padding-top: 16px;
-padding-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 nav a {
-color: #2563eb;
-text-decoration: none;
-font-weight: 600;
-transition: opacity 0.2s ease;
+    text-decoration: none;
+
+    color: var(--primary-color);
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
 }
 
 nav a:hover {
-opacity: 0.75;
+    opacity: 0.75;
 }
 
 nav a:focus-visible {
-outline: 2px solid #2563eb;
-outline-offset: 4px;
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
 }
 
-/* Main */
+/* ==========================================
+   Main
+   ========================================== */
 
 main {
-padding-top: 40px;
-padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 60px;
 }
 
-/* Sections */
+/* ==========================================
+   Sections
+   ========================================== */
 
 section {
-background: #ffffff;
+    background-color: var(--surface-color);
 
-```
-padding: 32px;
+    border-radius: 12px;
 
-margin-bottom: 24px;
+    padding: 32px;
 
-border-radius: 12px;
+    margin-bottom: 24px;
 
-box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.05);
-```
-
+    box-shadow: var(--shadow);
 }
 
 section:last-child {
-margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 section h2 {
-margin-top: 0;
-margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
 
-```
-color: #1d4ed8;
+    color: var(--primary-dark);
 
-font-size: 1.6rem;
-```
-
+    font-size: 1.6rem;
 }
 
 section p {
-margin-top: 0;
-margin-bottom: 16px;
+    margin-top: 0;
+    margin-bottom: 16px;
 }
 
 section p:last-child {
-margin-bottom: 0;
+    margin-bottom: 0;
 }
 
-/* Lists */
+/* ==========================================
+   Lists
+   ========================================== */
 
 ul,
 ol {
-padding-left: 24px;
+    padding-left: 24px;
 }
 
 li {
-margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
-/* Contact */
-
-.contact {
-margin-top: 20px;
-}
-
-.contact a {
-font-weight: 600;
-font-size: 1.05rem;
-}
-
-/* Links */
+/* ==========================================
+   Links
+   ========================================== */
 
 a {
-color: #2563eb;
+    color: var(--primary-color);
 }
 
 a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
-/* Footer */
+/* ==========================================
+   Contact
+   ========================================== */
 
-footer {
-background: #ffffff;
-
-```
-border-top: 1px solid #e5e7eb;
-
-text-align: center;
-
-padding: 32px 20px;
-
-color: #6b7280;
-```
-
+.contact {
+    margin-top: 20px;
 }
 
-footer p {
-margin: 8px 0;
+.contact a {
+    font-weight: 600;
+    font-size: 1.05rem;
 }
 
-footer a {
-color: #2563eb;
-text-decoration: none;
-}
-
-footer a:hover {
-text-decoration: underline;
-}
-
-/* Tables */
+/* ==========================================
+   Tables
+   ========================================== */
 
 table {
-width: 100%;
-border-collapse: collapse;
-margin-top: 16px;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 th,
 td {
-border: 1px solid #d1d5db;
-padding: 12px;
-text-align: left;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
 }
 
 th {
-background: #eff6ff;
+    background-color: #eff6ff;
 }
 
-/* Code */
+/* ==========================================
+   Code
+   ========================================== */
 
 code {
-background: #eef2ff;
-padding: 2px 6px;
-border-radius: 4px;
-font-family: Consolas, monospace;
+    background-color: #eef2ff;
+
+    padding: 2px 6px;
+
+    border-radius: 4px;
+
+    font-family:
+        Consolas,
+        Monaco,
+        monospace;
 }
 
 pre {
-overflow-x: auto;
-padding: 16px;
-border-radius: 8px;
-background: #111827;
-color: #f9fafb;
+    overflow-x: auto;
+
+    padding: 16px;
+
+    border-radius: 8px;
+
+    background-color: #111827;
+
+    color: #f9fafb;
 }
 
-/* Responsive */
+/* ==========================================
+   Footer
+   ========================================== */
+
+footer {
+    background-color: var(--surface-color);
+
+    border-top: 1px solid var(--border-color);
+
+    text-align: center;
+
+    padding: 32px 20px;
+
+    color: var(--text-muted);
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
 
 @media (max-width: 768px) {
 
-```
-.hero {
-    padding: 56px 20px;
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    nav .container {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    section {
+        padding: 24px;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
 }
 
-.hero h1 {
-    font-size: 2.2rem;
-}
-
-.subtitle {
-    font-size: 1rem;
-}
-
-nav .container {
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-section {
-    padding: 24px;
-}
-
-section h2 {
-    font-size: 1.3rem;
-}
-```
-
-}
-
-/* Dark Mode */
+/* ==========================================
+   Dark Mode
+   ========================================== */
 
 @media (prefers-color-scheme: dark) {
 
-```
-body {
-    background: #111827;
-    color: #f3f4f6;
-}
+    :root {
+        --background-color: #111827;
+        --surface-color: #1f2937;
 
-nav {
-    background: #1f2937;
-    border-color: #374151;
-}
+        --text-color: #f3f4f6;
+        --text-muted: #d1d5db;
 
-section {
-    background: #1f2937;
-    box-shadow: none;
-}
+        --border-color: #374151;
 
-section h2 {
-    color: #60a5fa;
-}
+        --shadow: none;
+    }
 
-footer {
-    background: #1f2937;
-    border-color: #374151;
-    color: #d1d5db;
-}
+    section h2 {
+        color: #60a5fa;
+    }
 
-a {
-    color: #60a5fa;
-}
+    nav a,
+    a {
+        color: #60a5fa;
+    }
 
-table th {
-    background: #1e3a8a;
-}
+    th {
+        background-color: #1e3a8a;
+    }
 
-th,
-td {
-    border-color: #4b5563;
-}
-
-code {
-    background: #374151;
-}
-```
-
+    code {
+        background-color: #374151;
+    }
 }
